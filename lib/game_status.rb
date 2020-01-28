@@ -34,5 +34,8 @@ def won?(board)
   end
   board.all? do |x|
     x.nil? || x == " "
+
+  board.all? do |x|
+    !(x.nil? || x == " ")
   end
 end
