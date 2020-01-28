@@ -16,27 +16,20 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combination|
+  WIN_COMBINATIONS.each {|win_combination|
+    index_0 = win_combination[0]
+    index_1 = win_combination[1]
+    index_2 = win_combination[2]
 
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
-
-    position_1 = board[win_index_1] # load the value of the board at win_index_1
-    position_2 = board[win_index_2] # load the value of the board at win_index_2
-    position_3 = board[win_index_3] # load the value of the board at win_index_3
+    position_1 = board[index_0]
+    position_2 = board[index_1]
+    position_3 = board[index_2]
 
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
-      return win_combination
+      return win_combo
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-      return win_combination
+      return win_combo
     end
-  end
-  board.all? do |x|
-    x.nil? || x == " "
-  end
-  
-  board.all? do |x|
-    !(x.nil? || x == " ")
-  end
+  }
+  return false
 end
