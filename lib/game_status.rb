@@ -33,6 +33,6 @@ def won?(board)
     end
   end
   board.all? do |x|
-    !(x.nil? || x == " ")
+    (x.nil? || x == " ")
   end
 end
