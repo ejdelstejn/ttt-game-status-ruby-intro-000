@@ -32,10 +32,7 @@ def won?(board)
       return win_combination
     end
   end
-
   board.all? do |x|
     !(x.nil? || x == " ")
   end
-
-
 end
